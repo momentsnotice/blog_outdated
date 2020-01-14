@@ -14,6 +14,9 @@ class App extends React.Component {
         <Note>
           Home ={'>'} Blog ={'>'} About
         </Note>
+        <Note>
+          (scroll right)
+        </Note>
       </TopBar>
     );
   }
@@ -44,6 +47,7 @@ const Note = styled.p`
   font-size: 12px;
   color: #f2f2f255;
   animation: ${Fade} 2s linear 1;
+  margin-top: -10px;
 `;
 
 const BlogTitle = styled.h1`
@@ -58,6 +62,7 @@ const Author = styled.h1`
   color: #f2f2f2aa;
   font-size: 14px;
   font-weight: 200;
+  margin-bottom: 26px;
 `;
 
 /*
