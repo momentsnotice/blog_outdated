@@ -3,22 +3,6 @@ import styled from 'styled-components';
 import Post0 from './posts/0';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      apiResponse: '',
-    };
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
-  }
-
-  handleResize = () => {
-    this.forceUpdate();
-    console.log('hi')
-  }
-
   render() {
     var entries = [
       // <Post0 />,

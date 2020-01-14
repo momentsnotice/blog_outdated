@@ -3,12 +3,14 @@ import styled from 'styled-components';
 
 import Home from './components/home';
 import Main from './components/main';
+import About from './components/about';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Container>
+          <About />
           <Home />
           <Main />
         </Container>
