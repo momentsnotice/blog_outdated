@@ -24,7 +24,7 @@ class App extends React.Component {
           "Moment's Notice"
         </Subtitle>
         <About>
-          This blog's title was inspired by John Coltrane's <i>Moment's Notice</i>. As it suggests, the title for this blog was thought of on a moment's notice. Similarly, we plan on posting whenever we feel is suitable on topics that capture our curiosity.
+          This blog's title was inspired by John Coltrane's <i>Moment's Notice</i>. As it suggests, the title for this blog was thought of on a moment's notice. Similarly, we plan on posting whenever we feel is suitable on topics that capture our curiosity. This is a relatively STEM-oriented blog, but its contents won't necessarily be limited to STEM.
         </About>
         <br />
         <Subtitle>
