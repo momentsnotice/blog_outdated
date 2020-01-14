@@ -6,10 +6,10 @@ class App extends React.Component {
     return (
       <Post>
         <EntryTitle>
-          Improving the topological efficiency of the Seoul Metro System
+          Improving the topological efficiency of the Seoul Metro System (Test Excerpt)
         </EntryTitle>
         <Date>
-          By Sean Rhee || Jan. 14, 2020
+          Publishing Date: Jan. 14, 2020
         </Date>
         <Subtitle>
           Introduction
