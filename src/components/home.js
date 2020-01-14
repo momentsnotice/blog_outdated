@@ -32,8 +32,8 @@ const Fade = keyframes`
 
 const TopBar = styled.div`
   display: flex;
-  min-height: 100vh;
-  min-width: 100vw;
+  height: 100%;
+  min-width: 100%;
   background: linear-gradient(114deg, rgba(39,39,181,1) 0%, rgba(64,34,103,1) 39%, rgba(135,55,149,1) 74%, rgba(52,102,156,1) 100%);
   color: #f2f2f2;
   flex-direction: column;

@@ -37,7 +37,7 @@ class App extends React.Component {
 export default App;
 
 const Post = styled.div`
-  width: 80vw;
+  width: 100%;
   display: inline-block;
 `;
 

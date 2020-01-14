@@ -51,8 +51,7 @@ class App extends React.Component {
 export default App;
 
 const Holder = styled.div`
-  min-height: 100vh;
-  min-width: 80vw;
+  min-width: 80%;
   padding-left: 10%;
   padding-right: 10%;
   overflow-y: scroll;
