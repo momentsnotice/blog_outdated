@@ -15,9 +15,9 @@ class App extends React.Component {
         <About>
           Moment's Notice has two authors: Sean Rhee and Francis Park.
           <br /><br />
-          Sean is a senior at the Yongsan International School of Seoul (YISS). He has an interest in a wide range of subjects from computer science, to physics, to international relations, to engineering, to music. He likes running and is on both cross country and track and field at YISS. His favorite music genres are jazz and rock, but he also listens to rap, classical, and pop.
+          Sean is a senior at the Yongsan International School of Seoul (YISS). He has an interest in a wide range of subjects from computer science, to physics, to international relations, to engineering, to music theory/composition. He likes running and is on both cross country and track and field at YISS.
           <br /><br />
-          Francis is also a senior at YISS. He is also an avid Jazz & Hip-Hop listener. He enjoys playing (right-bench or the occasional start) for his school's varsity boys soccer team. Francis' interests include mathematics (number theory, discrete mathematics, time series), atmospheric sciences, unsupervised learning, and writing short stories. His friends refer to him as 'chunky'.
+          Francis is also a senior at YISS. He is an avid Jazz & Hip-Hop listener. He enjoys playing (right-bench or the occasional start) for his school's varsity boys soccer team. Francis' interests include mathematics (number theory, discrete mathematics, time series), atmospheric sciences, unsupervised learning, and writing short stories. His friends refer to him as 'chunky'.
         </About>
         <br />
         <Subtitle>
