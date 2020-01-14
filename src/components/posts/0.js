@@ -6,7 +6,7 @@ class App extends React.Component {
     return (
       <Post>
         <EntryTitle>
-          Improving the topological efficiency of the Seoul Metro System (Test Excerpt)
+          Seoul Metro System (Test Excerpt)
         </EntryTitle>
         <Date>
           Publishing Date: Jan. 14, 2020
