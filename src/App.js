@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './components/home';
+import Main from './components/main';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Container>
+          <Home />
+          <Main />
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none!important;
+    height: 0;
+    width: 0;
+    background-color: transparent;
+   }
+`;
