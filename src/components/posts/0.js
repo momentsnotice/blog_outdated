@@ -9,7 +9,7 @@ class App extends React.Component {
           Seoul Metro System (Test Excerpt)
         </EntryTitle>
         <Date>
-          Publishing Date: Jan. 14, 2020
+          Published January 14, 2020
         </Date>
         <Subtitle>
           Introduction
@@ -45,8 +45,8 @@ const Date = styled.h1`
   color: #00000088;
   font-size: 12px;
   font-weight: 300;
-  margin-top: -8px;
-  margin-bottom: 20px;
+  margin-top: -12px;
+  margin-bottom: 26px;
 `;
 
 const EntryTitle = styled.h1`
