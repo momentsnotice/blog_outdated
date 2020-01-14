@@ -12,7 +12,7 @@ class App extends React.Component {
           By Francis Park and Sean Rhee
         </Author>
         <Note>
-          (scroll right)
+          Home ={'>'} Blog ={'>'} About
         </Note>
       </TopBar>
     );

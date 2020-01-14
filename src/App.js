@@ -8,13 +8,11 @@ import About from './components/about';
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Container>
-          <About />
-          <Home />
-          <Main />
-        </Container>
-      </div>
+      <Container>
+        <Home />
+        <Main />
+        <About />
+      </Container>
     );
   }
 }
@@ -24,10 +22,10 @@ export default App;
 const Container = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   ::-webkit-scrollbar {
