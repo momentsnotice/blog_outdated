@@ -30,7 +30,7 @@ const Main = styled.div`
   scroll-snap-align: start;
   scroll-snap-stop: always;
   scrollbar-width: none;
-  background-color: #f7f6f2;
+  background-color: #fafafa;
 `;
 
 const Stopper = styled.div`

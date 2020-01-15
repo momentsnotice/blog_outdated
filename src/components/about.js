@@ -58,7 +58,7 @@ const Holder = styled.div`
   scroll-snap-align: start;
   scroll-snap-stop: always;
   scrollbar-width: none;
-  background: linear-gradient(90deg, rgba(165,167,176,1) 0%, rgba(247,246,242,1) 0.1%, rgba(247,246,242,1) 100%);;
+  background: linear-gradient(90deg, #a5a7b0 0%, #fafafa 0.1%, #fafafa 100%);;
 `;
 
 const Stopper = styled.div`
