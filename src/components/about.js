@@ -15,7 +15,7 @@ class App extends React.Component {
         <About>
           Moment's Notice has two authors: Sean Rhee and Francis Park.
           <br /><br />
-          Sean is a senior at the Yongsan International School of Seoul (YISS). He has an interest in a wide range of subjects from computer science, to physics, to international relations, to engineering, to music theory/composition. He likes running and is on both cross country and track and field at YISS.
+          Sean is a senior at the Yongsan International School of Seoul (YISS). He has an interest in a wide range of subjects from computer science, to physics, to international relations, to engineering, to music theory/composition. He likes running and is on both the cross country team and track and field team at YISS.
           <br /><br />
           Francis is also a senior at YISS. He is an avid Jazz & Hip-Hop listener. He enjoys playing (right-bench or the occasional start) for his school's varsity boys soccer team. Francis' interests include mathematics (number theory, discrete mathematics, time series), atmospheric sciences, unsupervised learning, and writing short stories. His friends refer to him as 'chunky'.
         </About>
@@ -24,7 +24,7 @@ class App extends React.Component {
           "Moment's Notice"
         </Subtitle>
         <About>
-          This blog's title was inspired by John Coltrane's <i>Moment's Notice</i>. As it suggests, the title for this blog was thought of on a moment's notice. Similarly, we plan on posting whenever we feel is suitable on topics that capture our curiosity. This is a relatively STEM-oriented blog, but its contents won't necessarily be limited to STEM.
+          Created on January 14, 2020, this blog's title was inspired by John Coltrane's <i>Moment's Notice</i>. As the name suggests, the title of this blog was chosen on a moment's notice. Similarly, we plan on posting whenever we feel is suitable on topics that capture our curiosity. This is a relatively STEM-oriented blog, but its contents won't necessarily be limited to STEM.
         </About>
         <br />
         <Subtitle>
