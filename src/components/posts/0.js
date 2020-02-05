@@ -16,7 +16,6 @@ class App extends React.Component {
           Photo: Seoul Metropolitan Subway Map (Credit: Seoul Metro)
         </Caption>
         <Subtitle>
-          Introduction
         </Subtitle>
         <MainText>
           The Seoul metro is considered one of the best in the world. Despite this, it still has various inefficiencies. For me, this is best exemplified by the fact that I can jog home from school faster than if I took subway. Maybe I'm just unlucky, but as great as Seoul's metro is, I can't help but feel like it could be better. But how exactly could one go about improving the metro's efficiency?
