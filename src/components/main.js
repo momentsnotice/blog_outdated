@@ -7,8 +7,6 @@ class App extends React.Component {
     var entries = [
       // <Post0 />,
       // <StyledDivider />,
-      <Post0 key={0}/>,
-      <StyledDivider />,
       <Post0 key={0}/>
     ]
 
