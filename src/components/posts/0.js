@@ -83,6 +83,64 @@ class App extends React.Component {
         <MainText>
           From what I can tell, Seoul's metro topology isn't fully optimized. With Seoul having one of the best metro systems in the world, I'd assume that a similar statement could be said about almost every other metro system in the world. Because of this, I think it would make sense to devise a way to improve metro topology in general. To do this, I hope to train a machine learning algorithm to minimize an inefficiency metric that accounts for distance, commuter time, and service potential. Although there are certain drawbacks to the method proposed, it should still work relatively well (admittedly, this statement is backed by intuition rather than data). In future installments of this series, I hope to a) test our inefficiency metric on small, randomly generated "subway maps" b) scale this implementation for the actual Seoul Metro c) perhaps input data for other famous metro systems and compare generated maps and (in)efficiencies.
         </MainText>
+        <Subtitle>
+          What To Expect:
+        </Subtitle>
+        <SuppText>
+          TL;DR: This is kinda a supplementary addition to this post regarding progress so far in terms of actual implementation. I guess you can think of it as a sneak-peek so to speak as well as a behind-the-scenes.
+        </SuppText>
+        <SuppText>
+          (just as a disclaimer, things might get very, perhaps overly, detailed)
+        </SuppText>
+        <MiniTitle>
+          Machine Learning
+        </MiniTitle>
+        <SuppText>
+          I've mentioned "machine learning algorithms" multiple times, but this is extremely broad and not very detailed. To be more specific, I want use a NEAT genetic algorithm. NEAT, or NeuroEvolution of Augmenting Topologies, is an extremely interesting genetic algorithm implementation. Skipping over the details, NEAT can help our genetic algorithm find the (locally) ideal neural network topology for the problem at hand through the use of a clever system of topological evolution, classification, and record keeping. Because of this, NEAT usually learns faster than a standard genetic algorithm.
+        </SuppText>
+        <SuppText>
+          Regardless of what form of machine learning we're talking about, there are certain implementation details that are important. For me, I've found that it's usually important to start small and build up. Because of this, rather than immediately trying to tackle the Seoul Metro as a whole, I'm testing with small, fixed maps with random initialization. This will then be used for scaling up to the Seoul Metro.
+        </SuppText>
+        <MiniTitle>
+          Data Encoding
+        </MiniTitle>
+        <SuppText>
+          For my NEAT algorithm to work at all, it of course has to have a set of inputs and outputs. Regarding inputs, I've decided to, at least in initial testing, feed in what is effectively an adjacency matrix on top of information denoting the "current station" and "current line" as well as a bias node. What may initially seem like a glaring oversight is that there is absolutely no input data regarding the actual coordinates of the stations; however, this isn't necessary. Because the algorithm will only ever work with a single map in any given training session, the station locations will always be the same. That means that this information will, in a round-about way, be implicitly conveyed via fitness results. In terms of outputs, the algorithm will return a choice for the destination station and a decision on whether or not to start drawing the next line (once the line count, not to be confused with connection/edge count, reaches a cap, the graph will be evaluated). This should result in our algorithm outputting a subway system with multiple subway lines.
+        </SuppText>
+        <SuppText>
+          Feeding in an adjacency matrix as a part of the input is a bit troublesome. The Seoul Metro (which in terms of my data collection is limited to lines 1~9) has 434 stations. That means that if the adjacency matrix is flattened into an array for input, it'll result in a 434<sup>2</sup> + 2 (with the +2 representing current node and current line) or 188,359 dimensional problem which would therefore ideally have a generational population size of 1,883,590. That's an absurdly large number that would be very hard to work with. Furthermore, based on cursory tests, python (and/or my computer itself) seemed to be computationally overloaded when trying to generate a network that could take 188,359 inputs. Furthermore, for the output, the network has to choose which node to travel to next, so it would have to have 434 + 1 (with the +1 representing the boolean switch for moving to the next line) or 435 outputs. Not only would such a massive network be difficult to generate, but it would be even harder to fire the network and breed/mutate it. To cut down size, since an adjacency matrix is symmetrical, by removing redundancies as well as self-connections, we can go from representing our connection input data as 434<sup>2</sup> to <sub>434</sub>C<sub>2</sub>, or 188,359 to 93,961. This is still huge and computationally impossible for me to work with. Despite that, this idea can be applied to my small-scale tests involving 10 inputs rather than 434. For 434 inputs, I think a possible idea would be to give the coordinates for the current node as well as the coordinates for the n closest nodes and have it choose which node to move to. Although this wouldn't necessarily result in a globally optimal outcome, some effectivity has to be traded in order to make this problem computable in an efficient manner. Ideally, however, I'll find some more compact way to encode data for a graph with 434 vertices so that I can have a better solution.
+        </SuppText>
+        <MiniTitle>
+          Small-Scale Tests
+        </MiniTitle>
+        <SuppText>
+          Regarding initial testing, I decided to go with a map containing 10 points with random (but fixed) coordinates that have components distributed in the range [0, 1]. Furthermore, in terms of maximum lines, although the theoretical maximum line count for 10 stations is <sub>10</sub>C<sub>2</sub> or 45, that would mean that every single station has a unique line meant solely for connecting to every other station (a complete graph where each edge is its own line). Despite this, (what I'm considering to be) the Seoul Metro has 434 stops and 9 lines. 9:434 is a way smaller ratio than 45:10. Because of this, I decided to (somewhat arbitrarily) set a maximum line count of 5 for my 10 station system (and honestly, a 5:10 ratio is still extremely generous).
+        </SuppText>
+        <SuppText>
+          In terms of determining the INP and NTP values for my small map, I worked with a series of assumptions. First, although INP and NTP fluctuate with station service potential, there has to be some base INP and base NTP value to scale. There were a few steps involved in determining these base values (and as a fair warning, I completely ignoring sig figs). Based on cursory research, the average subway car operates at 50 kmph. If I assume that each intermediate station slows down a trip between stations a and b by 40 seconds and that each transfer slows down the same trip by 3 minutes, that means that using our 50 kmph value, a reasonable base INP should be equivalent to 0.6 km and that a reasonable base NTP should be equivalent to 2.5 km. However, with the test stations being imaginary, when they had coordinates initialized in the range [0, 1], there was no context for the scale of the map. This means that we can't just have an INP of 0.6 and NTP of 2.5 because 1 unit in our map isn't equivalent to 1 km. To solve this, I (somewhat boldly) assumed that each station serviced a similarly sized area on average. Assuming that the distance covered by the initialization range of 0 to 1 along either the horizontal or vertical axis is equal to some distance <i>u</i>, the total area of the map would equal to <i>u<sup>2</sup></i>. This means that the average area serviced by any given station would be <i>u<sup>2</sup>/10</i>. That means that if we were to arrange our stations in a lattice, the average distance from one station to the immediately surrounding stations would equal <i>(u/(10**0.5)) + (u/(5**0.5))/2</i>. In the Seoul Metro, it takes an average of ~2.5 minutes to get from one station to its neighbor. Working with previous numbers, this means that the average distance between any two neighboring stations is ~2.08 km. Setting <i>(u/(10**0.5)) + (u/(5**0.5))/2</i> equal to 2.08 km, we can see that u is ~ 5.5 km. Therefore, our INP and NTP get scaled accordingly resulting in an INP of 0.1 and NTP of 0.45. Maybe it doesn't make sense to use the value of 2.5 minutes between neighboring stations (and therefore 0.1 for our INP and 0.45 for our NTP) because our test metro might not have the same density as Seoul's metro. However, these values are good enough and using an average time of 2.5 minutes anchors our imaginary maps, at least somewhat, in reality.
+        </SuppText>
+        <SuppText>
+          Far more arbitrarily, the service potentials assigned to each of the 10 stations were randomly sampled from a normal distribution where μ was set to 0.75 and σ was set to 0.15. This could probably use fine-tuning at some other point in time (which would probably be important considering that it really is this service potential value that shapes the ultimate characteristics of our output graph).
+        </SuppText>
+        <MiniTitle>
+          Seoul Metro Data Collection
+        </MiniTitle>
+        <SuppText>
+          In the long run, data regarding Seoul's metro is required so that initial tests can be applied with real data for a real system. To create a proper layout for a new Seoul subway system, the actual locations of each station had to be found. It's entirely true that for a fully optimized system, the actual locations of stations themselves should be moved as well, but for our purposes, we'll just assume that it's only the paths that will be needing changing.
+        </SuppText>
+        <SuppText>
+          Since it's only lines 1~9 that concern this project, by drawing from a list of stations in those lines on Wikipedia, each station's latitude and longitude was found with the help of Google Maps. This was compiled into a .csv file which we then converted into {'<'}x, y{'>'} coordinates via the Universal Transverse Mercator coordinate system. All of South Korea is within one UTM zone, so I hope that distortion is minimal (although there will, of course, be distortion). Either way, each station's new coordinates were compiled into a list and normalized within the range [0, 1].
+        </SuppText>
+        <SmallImg src={require('./utm_map.png')} />
+        <Caption>
+          Using the coordinates we obtained, this is what we ended up with.
+        </Caption>
+        <SuppText>
+          The other information that is necessary to create an efficient layout is to know each station's individual "importance." I was able to find an official spreadsheet with the average throughput of each station each hour throughout the year; however, the data hasn't been scraped yet.
+        </SuppText>
+        <SuppText>
+          That concludes all the progress so far in terms of actual implementation. Any and all suggestions are welcome. I hope you found this at least somewhat interesting, and stay tuned for the next installment of this series.
+        </SuppText>
       </Post>
     );
   }
