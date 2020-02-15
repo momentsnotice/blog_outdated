@@ -105,7 +105,7 @@ class App extends React.Component {
 		Efficiency, like our previous metric, is not completely objective.
 	</MainText>
 	<MainText>
-		For a complex (metro) network, we deem a network efficient when it diffuses information quickly, has minimal hop count, and minimal information delay. The latter component, however, is impossible to implement logistically as it is too computational expensive and impractical — I do not believe Seoul Metropolitan collects data on how long passengers must wait (metro delay time). 
+		For a complex (metro) network, we deem a network efficient when it diffuses information quickly, has minimal hop count, and minimal information delay. The latter component, however, is impossible to implement logistically as it is too computational expensive and impractical. I do not believe Seoul Metropolitan collects data on how long passengers must wait (metro delay time). 
 	</MainText>
 	<MainText>
 		Literature in China (Leng et. al 2016) reveals distinctions between passengers that care about sheer hop-count and euclidean distance when choosing their respective forms of transport or routing methods. We took that account when constructing the index. 
