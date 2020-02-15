@@ -1,25 +1,38 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/blog/static/js/main.4c73b03c.chunk.js",
-    "main.js.map": "/blog/static/js/main.4c73b03c.chunk.js.map",
+    "main.js": "/blog/static/js/main.c2b1fab1.chunk.js",
+    "main.js.map": "/blog/static/js/main.c2b1fab1.chunk.js.map",
     "runtime-main.js": "/blog/static/js/runtime-main.30068621.js",
     "runtime-main.js.map": "/blog/static/js/runtime-main.30068621.js.map",
     "static/js/2.052d5810.chunk.js": "/blog/static/js/2.052d5810.chunk.js",
     "static/js/2.052d5810.chunk.js.map": "/blog/static/js/2.052d5810.chunk.js.map",
     "index.html": "/blog/index.html",
-    "precache-manifest.52ff10562e46e34e5b2a415de1c2d2da.js": "/blog/precache-manifest.52ff10562e46e34e5b2a415de1c2d2da.js",
+    "precache-manifest.78511424f6b00005cc1a0bc71c25bd16.js": "/blog/precache-manifest.78511424f6b00005cc1a0bc71c25bd16.js",
     "service-worker.js": "/blog/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/blog/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.052d5810.chunk.js.LICENSE": "/blog/static/js/2.052d5810.chunk.js.LICENSE",
+    "static/media/INDEX.svg": "/blog/static/media/INDEX.a7e8a164.svg",
+    "static/media/Robustness.svg": "/blog/static/media/Robustness.332fef72.svg",
+    "static/media/algConnect.svg": "/blog/static/media/algConnect.6e24af71.svg",
+    "static/media/assortivity.svg": "/blog/static/media/assortivity.cc5800e0.svg",
+    "static/media/avgDegree.svg": "/blog/static/media/avgDegree.aff38a84.svg",
+    "static/media/avgHopCount.svg": "/blog/static/media/avgHopCount.11a5a64c.svg",
+    "static/media/e.svg": "/blog/static/media/e.d4f6f958.svg",
+    "static/media/eigen1.svg": "/blog/static/media/eigen1.4b8799a9.svg",
+    "static/media/eigen2.svg": "/blog/static/media/eigen2.f9351b80.svg",
+    "static/media/eigen3.svg": "/blog/static/media/eigen3.1933b9ce.svg",
     "static/media/graph_visual.png": "/blog/static/media/graph_visual.b8b59136.png",
     "static/media/inefficiency_fitness_eq.svg": "/blog/static/media/inefficiency_fitness_eq.43a3468e.svg",
+    "static/media/ineq.svg": "/blog/static/media/ineq.f225688e.svg",
+    "static/media/natConnect1.svg": "/blog/static/media/natConnect1.96063010.svg",
+    "static/media/natConnect2.svg": "/blog/static/media/natConnect2.75e2a4ba.svg",
     "static/media/subway_map.jpeg": "/blog/static/media/subway_map.6716dc71.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.30068621.js",
     "static/js/2.052d5810.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.4c73b03c.chunk.js"
+    "static/js/main.c2b1fab1.chunk.js"
   ]
 }
