@@ -6,7 +6,7 @@ class App extends React.Component {
     return (
       <Post>
         <EntryTitle>
-          Improving Subway Efficiency—Part One (Draft/Test Excerpt)
+          Improving Subway Efficiency — Part One 
         </EntryTitle>
         <Date>
           Written By Sean Rhee || Published Jan. 2020
