@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Post0 from './posts/0';
-import Post1 from './posts/1';
 
 class App extends React.Component {
   render() {
     var entries = [
-      <Post1 key={1} />,
-      <StyledDivider />,
       <Post0 key={0}/>,
       <StyledDivider />
     ]
